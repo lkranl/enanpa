@@ -68,6 +68,16 @@
         .toggle-button.dark .icon {
             transform: translateX(25px);
         }
+        #logo-light {
+            display: none;
+            width: 300px;
+            margin: 0 auto;
+        }
+        #logo-dark {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body class="dark-mode">
@@ -75,7 +85,9 @@
         <div class="icon sun">☀️</div>
         <div class="icon moon">🌙</div>
     </button>
-    <div style="text-align: center; margin-top: 20%;">
+    <div style="text-align: center; margin: 10%;">
+        <img src="./GG.jpeg.jpg" alt="Enanpa dark-mode" id="logo-dark">
+        <img src="./VCB.png" alt="Enanpa light" id="logo-light">
         <h1>Enanpa - Under Development</h1>
         <p>Our website is currently under development. Please check back later.</p>
     </div>
@@ -88,11 +100,15 @@
                 body.classList.add('light-mode');
                 toggleButton.classList.remove('dark');
                 toggleButton.classList.add('light');
+                document.getElementById('logo-light').style.display = 'block';
+                document.getElementById('logo-dark').style.display = 'none';
             } else {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
                 toggleButton.classList.remove('light');
                 toggleButton.classList.add('dark');
+                document.getElementById('logo-light').style.display = 'none';
+                document.getElementById('logo-dark').style.display = 'block';
             }
         }
     </script>
