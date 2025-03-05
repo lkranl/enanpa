@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enanpa - Under Development</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 25px;
+            background-color: #f0f0f0;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .toggle-button .icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        .toggle-button .icon.sun {
+            background-color: #ffcc00;
+        }
+        .toggle-button .icon.moon {
+            background-color: #3333ff;
+        }
+        .toggle-button.light .icon.sun {
+            display: block;
+        }
+        .toggle-button.light .icon.moon {
+            display: none;
+        }
+        .toggle-button.dark .icon.sun {
+            display: none;
+        }
+        .toggle-button.dark .icon.moon {
+            display: block;
+        }
+        .toggle-button.light .icon {
+            transform: translateX(0);
+        }
+        .toggle-button.dark .icon {
+            transform: translateX(25px);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <button class="toggle-button dark" onclick="toggleMode()">
+        <div class="icon sun">☀️</div>
+        <div class="icon moon">🌙</div>
+    </button>
+    <div style="text-align: center; margin-top: 20%;">
+        <h1>Enanpa - Under Development</h1>
+        <p>Our website is currently under development. Please check back later.</p>
+    </div>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.toggle-button');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                toggleButton.classList.remove('dark');
+                toggleButton.classList.add('light');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                toggleButton.classList.remove('light');
+                toggleButton.classList.add('dark');
+            }
+        }
+    </script>
+</body>
+</html>
